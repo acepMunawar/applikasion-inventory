@@ -1,0 +1,10 @@
+
+<bm>
+select barang_masuk.tanggal,namaSupplier,alamatSupplier,nama_barang,jumlah from barang_masuk join barang on kode_barang = kd_barang join supplier on kd_supplier = id_supplier where barang_masuk.tanggal >=$P{tgl1} and barang_masuk.tanggal<=$P{tgl2}
+
+
+<barang keluar>
+select barang_keluar.tanggal,nama_barang,nama_karyawan,jumlah from barang_keluar join barang on barang.kode_barang = barang_keluar.kd_barang join karyawan on karyawan.id_karyawan = barang_keluar.kd_karyawan where barang_keluar.tanggal>=$P{tgl1} and barang_keluar.tanggal<=$P{tgl2};
+
+
+select tanggal, nama_barang,nama_kategori,nama_karyawan,keterangan,jumlah from permintaan_barang join kategori on kategori.id_kategori = permintaan_barang.id_kategori join karyawan on karyawan.id_karyawan = permintaan_barang.id_karyawan where permintaan_barang.tanggal >=$P{tgl1} and tanggal<=$P{tgl2};
